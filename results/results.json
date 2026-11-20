@@ -1,0 +1,30 @@
+{
+  "gallery_size": 5000,
+  "n_queries": 500,
+  "embedding_dim": 512,
+  "model": "ResNet-18 pretrained on ImageNet (ONNX Model Zoo), global-average-pooling embedding, cosine similarity",
+  "baseline": "64-d RGB colour histogram, cosine similarity",
+  "resnet18": {
+    "recall@5": 0.94,
+    "recall@10": 0.962,
+    "map@10": 0.7701
+  },
+  "colour_histogram_baseline": {
+    "recall@5": 0.622,
+    "recall@10": 0.804,
+    "map@10": 0.3368
+  },
+  "resnet18_recall@10_by_class": {
+    "airplane": 1.0,
+    "automobile": 1.0,
+    "bird": 0.9048,
+    "cat": 0.92,
+    "deer": 0.9434,
+    "dog": 0.9388,
+    "frog": 0.9444,
+    "horse": 0.9828,
+    "ship": 0.9706,
+    "truck": 1.0
+  },
+  "relevance_definition": "retrieved image is relevant iff its CIFAR-10 class matches the query class (proxy for visual similarity)"
+}
